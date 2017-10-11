@@ -35,4 +35,19 @@ function main(){
 		}
 	});
 	//============================================================
+	//Exercise 4
+	var start = document.getElementById("start");
+	
+	start.addEventListener("click", function(){
+		var walls = document.querySelectorAll(".boundary");
+		if (walls.length != 0){
+			for(var i = 0; i < walls.length; i++){
+				if(walls[i].className == "boundary example"){
+					continue;
+				}
+				walls[i].className = "boundary";
+			}
+		}
+	});
+	//============================================================
 }

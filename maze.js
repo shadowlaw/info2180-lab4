@@ -17,6 +17,7 @@ function main(){
 			e_flag = i;
 		}else{
 			boundaries[i].addEventListener("mouseover", function(){
+				document.getElementById("status").textContent = "You lose!"
 				for(var i = 0; i < boundaries.length; i++){
 					if( i != e_flag){
 						boundaries[i].className = "boundary youlose";
@@ -37,7 +38,8 @@ function main(){
 	//============================================================
 	//Exercise 4
 	var start = document.getElementById("start");
-	
+	var status = document.getElementById("status");
+
 	start.addEventListener("click", function(){
 		var walls = document.querySelectorAll(".boundary");
 		if (walls.length != 0){
@@ -47,6 +49,8 @@ function main(){
 				}
 				walls[i].className = "boundary";
 			}
+
+			status.textContent = "Move your mouse over the \"S\" to begin.";
 		}
 	});
 	//============================================================
@@ -55,7 +59,7 @@ function main(){
 	var status = document.getElementById("status");
 
 	end.addEventListener("mouseover", function(){
-		if(document.querySelectorAll(".youlose") == 0){
+		if(document.querySelectorAll(".youlose").length == 0){
 			status.textContent = "You win!";
 		}else{
 			status.textContent = "You Lose!";

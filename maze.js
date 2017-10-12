@@ -54,7 +54,7 @@ function main(){
 		}
 	});
 	//============================================================
-	//Exercise 4
+	//Exercise 5
 	var end = document.getElementById("end");
 	var status = document.getElementById("status");
 
@@ -66,5 +66,22 @@ function main(){
 		}
 	});
 
+	//============================================================
+	//Exercise 6
+	let cheatCheck = document.getElementById("start");
+	let maze = document.getElementById("maze");
+
+	cheatCheck.addEventListener("mouseout", function(){
+		maze.addEventListener("mouseleave", function(){
+			for(var i = 0; i < boundaries.length; i++){
+				document.getElementById("status").textContent = "You lose!"
+				for(var i = 0; i < boundaries.length; i++){
+					if( boundaries[i].className.indexOf("example") == -1){
+						boundaries[i].className = "boundary youlose";
+					}
+				}
+			}
+		});
+	});
 	//============================================================
 }
